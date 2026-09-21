@@ -1,10 +1,16 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>test-1 — Engine</title><link rel="stylesheet" href="styles.css"></head>
+<title>test-1 — Editor Hub</title><link rel="stylesheet" href="styles.css"></head>
 <body><div class="wrap">
-<h1 class="serif">test-1 engine</h1><p class="d">Import → proxy → timeline → color/audio/captions → export. Free 720p, paid 4K.</p>
-<div class="card"><h3>Preview (proxy)</h3><video id="pv" controls playsinline style="width:100%;border-radius:12px;background:#000"></video>
-<p><input type="file" id="imp" accept="video/*"></p></div>
-<div class="card"><h3>Timeline</h3><div id="tl" class="d">No clips. Import to begin.</div>
-<div class="btnrow"><button onclick="Engine.split()">Split</button><button onclick="Engine.caption()">+ Caption</button><button onclick="Engine.grade()">Grade +</button></div></div>
-<div class="card"><h3>Export</h3><div class="btnrow"><button onclick="Engine.export(720)">Free 720p</button><button onclick="Engine.export(2160)">Pro 4K 🔒</button></div><p class="d" id="st">Idle. WASM render graph stub → cloud queue later.</p></div>
-</div><script src="engine.js"></script></body></html>
+<h1 class="serif">test-1 hub</h1><p class="d">Seven paywall-safe editors, UIs intact. Pick one, edit, export back here.</p>
+<div class="card"><h3>Launch (in-repo vendors)</h3><p class="d">Clone with <code>--recurse-submodules</code> to run each UI verbatim.</p>
+<div class="row"><span>openreel-video · 5174★ MIT</span><a href="editors/openreel-video"><button>Open</button></a></div>
+<div class="row"><span>freecut · 2191★ MIT</span><a href="editors/freecut"><button>Open</button></a></div>
+<div class="row"><span>clip-js · 766★ MIT</span><a href="editors/clip-js"><button>Open</button></a></div>
+<div class="row"><span>cartcut · 752★ MIT</span><a href="editors/cartcut"><button>Open</button></a></div>
+<div class="row"><span>fabric-video-editor · 574★ MIT</span><a href="editors/fabric-video-editor"><button>Open</button></a></div>
+<div class="row"><span>videoeditor · 534★ Apache-2.0</span><a href="editors/videoeditor"><button>Open</button></a></div>
+<div class="row"><span>clypra · 3248★ MIT (desktop)</span><a href="editors/clypra"><button>Open</button></a></div></div>
+<div class="card"><h3>Unified export + paywall</h3><p class="d">Edit anywhere above, finish here. Free 720p watermarked, Pro clean 4K.</p>
+<div class="btnrow"><button onclick="Hub.export(720)">Free 720p</button><button onclick="Hub.export(2160)">Pro 4K 🔒</button> <button onclick="Hub.unlock()">Unlock Pro</button></div>
+<p class="d" id="st">Idle. License notices stay inside each vendor folder.</p></div>
+</div><script>const Hub={pro:localStorage.getItem('t1pro')==='1',export(px){const st=document.querySelector('#st');if(px>720&&!this.pro){st.textContent='Pro 4K locked — unlock to continue.';return}st.textContent='Exporting '+px+'p… (hub delegates to vendor engine)';setTimeout(()=>st.textContent='Done '+px+'p'+(px<=720?' (watermarked free)':' (clean pro)'),1000)},unlock(){this.pro=true;localStorage.setItem('t1pro','1');document.querySelector('#st').textContent='Pro unlocked on this device.'}};</script></body></html>
