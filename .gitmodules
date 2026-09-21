@@ -1,0 +1,21 @@
+[submodule "editors/openreel-video"]
+	path = editors/openreel-video
+	url = https://github.com/Augani/openreel-video.git
+[submodule "editors/freecut"]
+	path = editors/freecut
+	url = https://github.com/walterlow/freecut.git
+[submodule "editors/clip-js"]
+	path = editors/clip-js
+	url = https://github.com/mohyware/clip-js.git
+[submodule "editors/cartcut"]
+	path = editors/cartcut
+	url = https://github.com/cartesiancs/cartcut.git
+[submodule "editors/fabric-video-editor"]
+	path = editors/fabric-video-editor
+	url = https://github.com/AmitDigga/fabric-video-editor.git
+[submodule "editors/videoeditor"]
+	path = editors/videoeditor
+	url = https://github.com/kudlav/videoeditor.git
+[submodule "editors/clypra"]
+	path = editors/clypra
+	url = https://github.com/AIEraDev/Clypra.git
