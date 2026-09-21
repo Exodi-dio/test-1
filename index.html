@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>test-1 — Engine</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="wrap">
+<h1 class="serif">test-1 engine</h1><p class="d">Import → proxy → timeline → color/audio/captions → export. Free 720p, paid 4K.</p>
+<div class="card"><h3>Preview (proxy)</h3><video id="pv" controls playsinline style="width:100%;border-radius:12px;background:#000"></video>
+<p><input type="file" id="imp" accept="video/*"></p></div>
+<div class="card"><h3>Timeline</h3><div id="tl" class="d">No clips. Import to begin.</div>
+<div class="btnrow"><button onclick="Engine.split()">Split</button><button onclick="Engine.caption()">+ Caption</button><button onclick="Engine.grade()">Grade +</button></div></div>
+<div class="card"><h3>Export</h3><div class="btnrow"><button onclick="Engine.export(720)">Free 720p</button><button onclick="Engine.export(2160)">Pro 4K 🔒</button></div><p class="d" id="st">Idle. WASM render graph stub → cloud queue later.</p></div>
+</div><script src="engine.js"></script></body></html>
